@@ -1,0 +1,73 @@
+## Review template file for Virtualization Squad MU
+
+Instance = "https://openqa.suse.de" # openQA instance to query
+RabbitMQ = "amqps://suse:suse@rabbit.suse.de" # RabbitMQ instance to query
+RabbitMQTopic = "suse.openqa.job.done" # RabbitMQ topic to query
+HideStatus = [
+  "scheduled",
+  "passed",
+  "softfailed",
+  "cancelled",
+  "skipped",
+  "running",
+  "uploading",
+  "parallel_failed",
+  "reviewed",
+  "user_cancelled",
+] # Hide jobs in defined states
+RefreshInterval = 60 # Refresh from API once every minute
+MaxJobs = 20 # Max. job per group to display
+GroupBy = "groups" # Group by defined groups ("none" or "groups")
+RequestJobLimit = 100 # Query up to 100 jobs per http request
+
+## Maintenance updates #########################################################
+
+[[Groups]]
+Name = "Maintenance: SLES 16 / Maintenance: SLES 16.X Virtualization Staging "
+Params = { groupid = "46" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: SLES 16 / Maintenance: SLES 16.X Virtualization Staging "
+Params = { groupid = "686" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: SLES 16 / Maintenance: SLES 16.X Virtualization Increment "
+Params = { groupid = "687" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: Virtualization Incidents / Virtualization SLES Incidents for SLE15/12 "
+Params = { groupid = "559" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: SLE Micro / SL Micro Product Increments - Virtualization "
+Params = { groupid = "575" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: SLE Micro / SL Micro Staging Updates - Virtualization "
+Params = { groupid = "570" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: SLE Micro / Virtualization Maintenance Updates"
+Params = { groupid = "542" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: QR / Maintenance - QR - SLE16.0-Virtualization"
+Params = { groupid = "706" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: SLE Micro / SL Micro 6.2 Product Increments - Virtualization"
+Params = { groupid = "691" }
+MaxLifetime = 86400
+
+[[Groups]]
+Name = "Maintenance: SLE Micro / SL Micro 6.2 Staging Updates - Virtualization"
+Params = { groupid = "692" }
+MaxLifetime = 86400
